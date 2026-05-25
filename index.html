@@ -14,9 +14,11 @@
             margin: 0;
             padding: 0;
         }
+
         html {
             scroll-behavior: smooth;
         }
+
         body {
             background-color: #040804;
             color: #ffffff;
@@ -43,17 +45,17 @@
             overflow: hidden;
             animation: fadeInPage 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
-        
+
         @keyframes fadeInPage {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        
+
         .content-padding {
             padding: 0 50px;
             transition: padding 0.3s ease;
         }
-        
+
         /* Шапка сайта */
         .hero-banner {
             width: 100%;
@@ -62,19 +64,21 @@
             background-size: cover;
             position: relative;
         }
-        /* Вуаль над баннером для дорогого контраста */
+
         .hero-banner::after {
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
             background: linear-gradient(to bottom, transparent, rgba(15, 22, 15, 0.9));
         }
+
         .avatar-wrapper {
             margin-top: -70px;
             position: relative;
             z-index: 2;
             margin-bottom: 20px;
         }
+
         .logo {
             width: 130px;
             height: 130px;
@@ -84,6 +88,12 @@
             box-shadow: 0 10px 30px rgba(212, 175, 55, 0.25);
             background-color: #0f160f;
         }
+
+        .logo:hover {
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+            transition: 0.4s ease;
+        }
+
         h1 {
             font-family: 'Playfair Display', serif;
             font-weight: 500;
@@ -92,7 +102,9 @@
             line-height: 1.2;
             margin-bottom: 20px;
             letter-spacing: 1px;
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
         }
+
         .header-badge {
             font-family: 'Playfair Display', serif;
             font-style: italic;
@@ -101,7 +113,7 @@
             margin-bottom: 8px;
             letter-spacing: 0.5px;
         }
-        
+
         .divider {
             height: 1px;
             width: 120px;
@@ -116,13 +128,15 @@
             color: #d4af37;
             margin: 45px 0 25px 0;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 4px;
             font-weight: 400;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 15px;
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
         }
+
         .section-title::before, .section-title::after {
             content: '';
             display: block;
@@ -133,7 +147,8 @@
 
         /* Текстовое описание */
         .description {
-            font-size: 15.5px;
+            font-size: 16px;
+            line-height: 1.8;
             font-weight: 300;
             color: #d1d6d1;
             margin-bottom: 35px;
@@ -142,13 +157,14 @@
             letter-spacing: 0.3px;
         }
 
-        /* БЛОК: Форматы шоу (Новое!) */
+        /* БЛОК: Форматы шоу */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 15px;
             margin-bottom: 20px;
         }
+
         .service-card {
             background: rgba(11, 18, 11, 0.6);
             border: 1px solid rgba(26, 38, 26, 0.8);
@@ -157,16 +173,19 @@
             text-align: center;
             transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
         }
+
         .service-card:hover {
             transform: translateY(-4px);
             border-color: rgba(212, 175, 55, 0.4);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
         }
+
         .service-icon {
             color: #d4af37;
             font-size: 18px;
             margin-bottom: 10px;
         }
+
         .service-card h4 {
             font-family: 'Playfair Display', serif;
             font-size: 16px;
@@ -174,6 +193,7 @@
             margin-bottom: 10px;
             color: #ffffff;
         }
+
         .service-card p {
             font-size: 12.5px;
             color: #a9b3a9;
@@ -181,7 +201,7 @@
             line-height: 1.5;
         }
 
-        /* Секция видеопрезентаций */
+        /* Видео */
         .video-wrapper {
             width: 100%;
             display: grid;
@@ -189,6 +209,7 @@
             gap: 20px;
             margin-bottom: 20px;
         }
+
         .video-container {
             width: 100%;
             position: relative;
@@ -199,19 +220,21 @@
             box-shadow: 0 10px 20px rgba(0,0,0,0.4);
             border: 1px solid #2a3d2a;
         }
+
         .video-container iframe {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
             border: 0;
         }
 
-        /* Фотогалерея */
+        /* Галерея */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 15px;
             margin-bottom: 20px;
         }
+
         .gallery-item {
             position: relative;
             border-radius: 12px;
@@ -220,16 +243,18 @@
             box-shadow: 0 8px 20px rgba(0,0,0,0.5);
             aspect-ratio: 1/1;
         }
+
         .gallery-item img {
             width: 100%; height: 100%;
             object-fit: cover;
             transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
+
         .gallery-item:hover img {
             transform: scale(1.08);
         }
 
-        /* Карточка клиентов */
+        /* Клиенты */
         .clients-card {
             text-align: left;
             background: #0b120b;
@@ -239,6 +264,7 @@
             border: 1px solid #1a261a;
             box-shadow: 0 8px 20px rgba(0,0,0,0.3);
         }
+
         .clients-title {
             font-size: 15px;
             font-weight: 600;
@@ -248,12 +274,14 @@
             letter-spacing: 1.5px;
             text-align: center;
         }
+
         .clients-list {
             list-style: none;
             display: grid;
             grid-template-columns: 1fr;
             gap: 12px 25px;
         }
+
         .clients-list li {
             font-size: 14px;
             font-weight: 400;
@@ -262,6 +290,7 @@
             align-items: flex-start;
             line-height: 1.4;
         }
+
         .clients-list li::before {
             content: "✧";
             color: #d4af37;
@@ -270,13 +299,18 @@
             margin-top: 3px;
             flex-shrink: 0;
         }
-        
-        /* БЛОК: Театральная рецензия / Цитата (Новое!) */
-        .quote-block {
-            margin: 40px 0;
+
+        /* Цитата */
+        .quote-text-wrapper {
+            margin-top: 40px;
             padding: 0 30px;
-            position: relative;
         }
+
+        .quote-author-wrapper {
+            margin-top: 20px;
+            padding: 0 30px;
+        }
+
         .quote-text {
             font-family: 'Playfair Display', serif;
             font-style: italic;
@@ -285,30 +319,23 @@
             line-height: 1.6;
             margin-bottom: 10px;
         }
+
         .quote-author {
             font-size: 12px;
             text-transform: uppercase;
             letter-spacing: 2px;
             color: #d4af37;
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
         }
-        /* Обёртка для текста цитаты */
-.quote-text-wrapper {
-    margin-top: 40px;
-    padding: 0 30px;
-}
 
-/* Обёртка для подписи (сделаем её чуть ниже) */
-.quote-author-wrapper {
-    margin-top: 20px; /* Здесь вы можете менять отступ подписи от цитаты */
-    padding: 0 30px;
-}
-        /* Блок мессенджеров */
+        /* Кнопки */
         .links-container {
             width: 100%;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 15px;
         }
+
         .btn {
             display: flex;
             align-items: center;
@@ -321,28 +348,30 @@
             font-weight: 500;
             text-decoration: none;
             color: #ffffff;
-            transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+            transition: all 0.3s ease;
             box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
+
         .btn:hover {
-            transform: translateY(-3px);
+            transform: translateY(-5px) scale(1.02);
+            border-color: rgba(255, 255, 255, 0.3);
         }
+
         .btn-tg { background-color: #229ED9; }
         .btn-tg:hover { box-shadow: 0 10px 25px rgba(34, 158, 217, 0.45); background-color: #27a7e5; }
-        
         .btn-vk { background-color: #0077FF; }
         .btn-vk:hover { box-shadow: 0 10px 25px rgba(0, 119, 255, 0.45); background-color: #1a85ff; }
-        
         .btn-wa { background-color: #25D366; }
         .btn-wa:hover { box-shadow: 0 10px 25px rgba(37, 211, 102, 0.45); background-color: #2ee26f; }
-        
+
         .btn svg {
             width: 22px;
             height: 22px;
             fill: currentColor;
         }
 
-        /* Футер копирайт */
+        /* Футер */
         .footer {
             font-size: 11px;
             color: #445244;
@@ -350,14 +379,13 @@
             letter-spacing: 1px;
         }
 
-        /* АДАТИВНОСТЬ (Экраны < 768px) */
+        /* Адаптивность */
         @media (max-width: 768px) {
             body { padding: 10px; }
             .container { border-radius: 16px; padding-bottom: 30px; }
             .content-padding { padding: 0 20px; }
             h1 { font-size: 26px; }
             .header-badge { font-size: 14px; }
-            
             .services-grid { grid-template-columns: 1fr; gap: 12px; }
             .video-wrapper { grid-template-columns: 1fr; }
             .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
@@ -365,12 +393,23 @@
             .links-container { grid-template-columns: 1fr; gap: 12px; }
             .quote-text { font-size: 16px; }
         }
+
+        /* Анимации прокрутки */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
-        
         <header>
             <div class="hero-banner"></div>
             <div class="avatar-wrapper">
@@ -382,7 +421,7 @@
             <p class="header-badge">Балет мирового уровня для вашего события</p>
             <h1>Alex May Dance Company</h1>
             <div class="divider"></div>
-            
+
             <p class="description">
                 Alex May Dance Company — это уникальное объединение артистов ведущих театров, создающих захватывающие постановки на пуантах. Мы виртуозно сочетаем классическую элегантность с современными формами, предлагая зрителям нечто по-настоящему новаторское.
             </p>
@@ -446,13 +485,12 @@
                 </ul>
             </div>
 
-           <div class="quote-text-wrapper">
-    <p class="quote-text">Оставляя незабываемые впечатления, мы превращаем каждое событие в неповторимое художественное переживание.</p>
-</div>
-
-<div class="quote-author-wrapper">
-    <p class="quote-author">— Из отзывов официальных СМИ</p>
-</div>
+            <div class="quote-text-wrapper">
+                <p class="quote-text">«Уникальное прочтение классической балетной школы, стирающее границы между традицией и авангардом»</p>
+            </div>
+            <div class="quote-author-wrapper">
+                <p class="quote-author">— Из отзывов официальных СМИ</p>
+            </div>
 
             <h2 class="section-title">Обсудить проект</h2>
             <div class="links-container">
@@ -460,12 +498,10 @@
                     <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-1-.65-.35-1 .22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.66-.52.36-1 .53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.35-.49.97-.74 3.79-1.65 6.32-2.74 7.57-3.27 3.61-1.53 4.36-1.8 4.85-1.8.11 0 .35.03.5.16.13.12.17.29.18.41-.01.07-.01.14-.02.21z"/></svg>
                     Написать в Telegram
                 </a>
-
                 <a href="https://vk.com/id165158888" class="btn btn-vk" target="_blank" rel="noopener noreferrer">
                     <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.87 11.52c.42.41.87.79 1.25 1.23.4.45.77.93 1.07 1.46.22.38.1.79-.27.81h-2.22c-.6 0-1.11-.19-1.54-.62-.35-.35-.68-.72-1.01-1.09-.22-.24-.43-.47-.7-.62-.33-.18-.62-.1-.82.22-.21.32-.26.68-.29 1.05-.04.43-.24.61-.66.62-1.12.02-2.19-.21-3.17-.82A6.5 6.5 0 0 1 6.3 11.4c-.16-.36-.31-.73-.44-1.11-.14-.42.02-.63.45-.64h2.24c.29 0 .5.14.6.41.37.95.86 1.82 1.54 2.57.19.21.39.4.67.43.27.03.46-.08.54-.37.13-.5.17-1 .15-1.51-.02-.62-.18-.95-.66-1.04-.22-.04-.19-.13-.08-.2.34-.21.75-.24 1.15-.24h1.53c.43.04.54.24.57.68.04.62.02 1.24.01 1.86 0 .23.08.51.34.58.23.06.41-.1.55-.26.63-.73 1.11-1.55 1.49-2.43.12-.29.3-.44.62-.44h2.27c.52 0 .69.23.53.72-.25.75-.66 1.43-1.14 2.06-.34.45-.72.87-1.1 1.29-.16.15-.17.27-.02.44z"/></svg>
                     Написать в VK
                 </a>
-
                 <a href="https://api.whatsapp.com/send?phone=79119101521" class="btn btn-wa" target="_blank" rel="noopener noreferrer">
                     <svg viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.82 13.08c-.24.68-1.19 1.24-1.64 1.29-.45.05-.89.24-2.91-.56-2.42-.96-3.95-3.41-4.07-3.57-.12-.16-.99-1.32-.99-2.51 0-1.2.62-1.79.84-2.03.22-.24.48-.3.64-.3.16 0 .32.01.46.01.15 0 .35-.06.54.4.2.49.68 1.66.74 1.78.06.12.1.26.02.42-.08.16-.12.26-.24.4-.12.14-.26.31-.37.42-.12.12-.25.25-.11.49.14.24.63 1.04 1.35 1.68.93.83 1.71 1.09 1.95 1.21.24.12.38.1.52-.06.14-.16.6-1.11.76-1.31.16-.2.32-.16.54-.08.22.08 1.41.66 1.65.78.24.12.4.18.46.28.06.1.06.58-.18 1.26z"/></svg>
                     Написать в WhatsApp
@@ -475,9 +511,19 @@
             <footer class="footer">
                 &copy; 2026 Alex May Dance Company. All rights reserved.
             </footer>
-
         </div>
     </div>
 
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        });
+        document.querySelectorAll('.services-grid, .video-wrapper, .gallery-grid, .clients-card, .quote-text-wrapper').forEach(el => {
+            el.classList.add('fade-in-up');
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
