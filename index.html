@@ -49,7 +49,7 @@
             border: 1px solid #1a261a;
             border-radius: 24px;
             padding: 0 0 40px 0;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7), 0 0 80px rgba(114, 47, 55, 0.25);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
             text-align: center;
             overflow: hidden;
             animation: fadeInPage 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -166,7 +166,7 @@
             letter-spacing: 0.3px;
         }
 
-        /* БЛОК: Форматы шоу */
+        /* БЛОК: Форматы шоу (Элегантное золотое свечение при наведении) */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -185,8 +185,8 @@
 
         .service-card:hover {
             transform: translateY(-4px);
-            border-color: rgba(212, 175, 55, 0.4);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            border-color: rgba(212, 175, 55, 0.6);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 20px rgba(212, 175, 55, 0.35);
         }
 
         .service-icon {
@@ -210,7 +210,7 @@
             line-height: 1.5;
         }
 
-        /* Видео (Винный бархат) */
+        /* Видео (Нейтральное состояние в покое, винное свечение при наведении) */
         .video-wrapper {
             width: 100%;
             display: grid;
@@ -226,8 +226,9 @@
             height: 0;
             border-radius: 14px;
             overflow: hidden;
-            border: 1px solid rgba(58, 11, 21, 0.5);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 25px rgba(58, 11, 21, 0.6);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+            border: 1px solid #1a261a;
+            transition: border-color 0.4s ease, box-shadow 0.4s ease;
         }
 
         .video-container iframe {
@@ -236,7 +237,12 @@
             border: 0;
         }
 
-        /* Галерея (Винный бархат) */
+        .video-container:hover {
+            border-color: rgba(114, 47, 55, 0.7);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6), 0 0 35px rgba(58, 11, 21, 0.95);
+        }
+
+        /* Галерея (Нейтральное состояние в покое, винное свечение при наведении) */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -248,10 +254,10 @@
             position: relative;
             border-radius: 12px;
             overflow: hidden;
-            border: 1px solid rgba(58, 11, 21, 0.5);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5), 0 0 20px rgba(58, 11, 21, 0.5);
+            border: 1px solid #1a261a;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
             aspect-ratio: 1/1;
-            transition: border-color 0.4s ease, box-shadow 0.4s ease;
+            transition: transform 0.3s ease, border-color 0.4s ease, box-shadow 0.4s ease;
         }
 
         .gallery-item img {
@@ -260,8 +266,8 @@
             transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
-        /* Плавное усиление винного света при наведении */
         .gallery-item:hover {
+            transform: scale(1.02);
             border-color: rgba(114, 47, 55, 0.7);
             box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6), 0 0 35px rgba(58, 11, 21, 0.95);
         }
