@@ -180,13 +180,14 @@
             border-radius: 14px;
             padding: 22px 15px;
             text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.55); /* Мягкая базовая тень парения */
             transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
         }
 
         .service-card:hover {
-            transform: translateY(-4px);
+            transform: translateY(-5px);
             border-color: rgba(212, 175, 55, 0.6);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 20px rgba(212, 175, 55, 0.35);
+            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.7), 0 0 20px rgba(212, 175, 55, 0.35);
         }
 
         .service-icon {
@@ -226,9 +227,9 @@
             height: 0;
             border-radius: 14px;
             overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6); /* Усиленная глубокая тень */
             border: 1px solid #1a261a;
-            transition: border-color 0.4s ease, box-shadow 0.4s ease;
+            transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
         }
 
         .video-container iframe {
@@ -238,8 +239,9 @@
         }
 
         .video-container:hover {
+            transform: translateY(-3px);
             border-color: rgba(114, 47, 55, 0.7);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.6), 0 0 35px rgba(58, 11, 21, 0.95);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.75), 0 0 35px rgba(58, 11, 21, 0.95);
         }
 
         /* Галерея (Нейтральное состояние в покое, винное свечение при наведении) */
@@ -255,7 +257,7 @@
             border-radius: 12px;
             overflow: hidden;
             border: 1px solid #1a261a;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6); /* Выраженная тень парения */
             aspect-ratio: 1/1;
             transition: transform 0.3s ease, border-color 0.4s ease, box-shadow 0.4s ease;
         }
@@ -267,9 +269,9 @@
         }
 
         .gallery-item:hover {
-            transform: scale(1.02);
+            transform: scale(1.02) translateY(-4px);
             border-color: rgba(114, 47, 55, 0.7);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6), 0 0 35px rgba(58, 11, 21, 0.95);
+            box-shadow: 0 18px 35px rgba(0, 0, 0, 0.75), 0 0 35px rgba(58, 11, 21, 0.95);
         }
 
         .gallery-item:hover img {
@@ -284,7 +286,7 @@
             padding: 30px;
             margin-bottom: 35px;
             border: 1px solid #1a261a;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.65); /* Максимально глубокая тень для крупного блока */
         }
 
         .clients-title {
@@ -371,7 +373,7 @@
             text-decoration: none;
             color: #ffffff;
             transition: all 0.3s ease;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
@@ -381,11 +383,11 @@
         }
 
         .btn-tg { background-color: #229ED9; }
-        .btn-tg:hover { box-shadow: 0 10px 25px rgba(34, 158, 217, 0.45); background-color: #27a7e5; }
+        .btn-tg:hover { box-shadow: 0 12px 28px rgba(34, 158, 217, 0.5); background-color: #27a7e5; }
         .btn-vk { background-color: #0077FF; }
-        .btn-vk:hover { box-shadow: 0 10px 25px rgba(0, 119, 255, 0.45); background-color: #1a85ff; }
+        .btn-vk:hover { box-shadow: 0 12px 28px rgba(0, 119, 255, 0.5); background-color: #1a85ff; }
         .btn-wa { background-color: #25D366; }
-        .btn-wa:hover { box-shadow: 0 10px 25px rgba(37, 211, 102, 0.45); background-color: #2ee26f; }
+        .btn-wa:hover { box-shadow: 0 12px 28px rgba(37, 211, 102, 0.5); background-color: #2ee26f; }
 
         .btn svg {
             width: 22px;
@@ -445,7 +447,7 @@
             <div class="divider"></div>
 
             <p class="description">
-                Alex May Dance Company — это уникальное объединение артистов ведущих театров, создающих захватывающие постановки на пуантах. Мы виртуозно сочетаем классическую элегантность с современными формами, предлагая зрителям нечто по-настоящему новаторское.
+                Alex May Dance Company — это unique объединение артистов ведущих театров, создающих захватывающие постановки на пуантах. Мы виртуозно сочетаем классическую элегантность с современными формами, предлагая зрителям нечто по-настоящему новаторское.
             </p>
 
             <h2 class="section-title">Форматы выступлений</h2>
