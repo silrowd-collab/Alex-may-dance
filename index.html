@@ -65,17 +65,17 @@
             transition: padding 0.3s ease;
         }
 
-        /* Премиальный театральный баннер */
-        .hero-banner {
+        /* Безопасный театральный задник (AdBlock Bypass) */
+        .stage-cover {
             width: 100%;
             height: 380px;
-            background: #000000 url('banner.jpg') no-repeat center 20%;
+            background: #000000 url('hero-bg.jpg') no-repeat center 20%;
             background-size: cover;
             position: relative;
         }
 
-        /* Инновационная бесшовная маска: растворение картинки по бокам и снизу */
-        .hero-banner::after {
+        /* Инновационная бесшовная маска */
+        .stage-cover::after {
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
@@ -134,7 +134,7 @@
             margin: 0 auto 35px auto;
         }
 
-        /* Заголовки секций в стиле референса */
+        /* Заголовки секций */
         .section-title {
             font-family: 'Cormorant Garamond', serif;
             font-size: 24px;
@@ -284,7 +284,7 @@
             transform: scale(1.08);
         }
 
-        /* Карточка клиентов в точном соответствии со скриншотом */
+        /* Карточка клиентов */
         .clients-card {
             background: rgba(11, 18, 11, 0.5);
             border-radius: 16px;
@@ -422,7 +422,7 @@
             body { padding: 10px; }
             .container { border-radius: 16px; padding-bottom: 30px; }
             .content-padding { padding: 0 20px; }
-            .hero-banner { height: 260px; }
+            .stage-cover { height: 260px; }
             h1 { font-size: 34px; }
             .header-badge { font-size: 17px; }
             .section-title { font-size: 20px; letter-spacing: 3px; gap: 10px; }
@@ -453,7 +453,7 @@
 
     <div class="container">
         <header>
-            <div class="hero-banner"></div>
+            <div class="stage-cover"></div>
             <div class="avatar-wrapper">
                 <img src="logo.jpg" alt="Alex May" class="logo">
             </div>
