@@ -2,17 +2,40 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <link rel="icon" type="image/png" href="favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Alex May Dance Company — балет на пуантах для корпоративов, частных мероприятий и брендовых интеграций. Классическая элегантность и современный авангард.">
+    <meta name="theme-color" content="#040804">
+    <link rel="canonical" href="https://alexmay.silrowd.ru/">
+    <link rel="icon" type="image/png" href="favicon-32x32.png">
     
     <meta property="og:title" content="Alex May Dance Company | Балет мирового уровня">
-    <meta property="og:description" content="Уникальное объединение артистов ведущих театров. Classическая элегантность и современный авангард в ваших постановках.">
-    <meta property="og:image" content="preview.jpg">
-    <meta property="og:url" content="https://silrowd-collab.github.io/Alex-may-dance/">
+    <meta property="og:description" content="Уникальное объединение артистов ведущих театров. Классическая элегантность и современный авангард в ваших постановках.">
+    <meta property="og:image" content="https://alexmay.silrowd.ru/preview.jpg">
+    <meta property="og:url" content="https://alexmay.silrowd.ru/">
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="ru_RU">
     
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Alex May Dance Company | Балет мирового уровня">
+    <meta name="twitter:description" content="Уникальное объединение артистов ведущих театров. Классическая элегантность и современный авангард в ваших постановках.">
+    <meta name="twitter:image" content="https://alexmay.silrowd.ru/preview.jpg">
     <title>Dance Company Alex May | Балет мирового уровня</title>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "PerformingGroup",
+        "name": "Alex May Dance Company",
+        "description": "Балет на пуантах для корпоративов, частных мероприятий и брендовых интеграций",
+        "url": "https://alexmay.silrowd.ru/",
+        "image": "https://alexmay.silrowd.ru/preview.jpg",
+        "sameAs": [
+            "https://t.me/yosoymashaa",
+            "https://vk.ru/alexmay.show"
+        ],
+        "areaServed": "RU",
+        "knowsAbout": ["балет", "шоу-программы", "корпоративные мероприятия", "брендовые интеграции"]
+    }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -28,14 +51,23 @@
             scroll-behavior: smooth;
         }
 
+        /* 1. ЭФФЕКТ ТЕАТРАЛЬНОГО ПРОЖЕКТОРА */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(212, 175, 55, 0.04), transparent 40%);
+            pointer-events: none;
+            z-index: 9999;
+        }
+
         body {
-            background: #040804 radial-gradient(circle at 50% 35%, #2a050c 0%, #040804 75%);
+            background-color: #040804;
+            background-image: radial-gradient(circle at 50% 35%, #2a050c 0%, #040804 75%);
             color: #ffffff;
             font-family: 'Manrope', sans-serif;
             line-height: 1.7;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             min-height: 100vh;
             padding: 40px 20px;
             transition: padding 0.3s ease;
@@ -45,6 +77,7 @@
         .container {
             width: 100%;
             max-width: 960px;
+            margin: 0 auto;
             background: rgba(15, 22, 15, 0.95);
             border: 1px solid #1a261a;
             border-radius: 24px;
@@ -69,12 +102,14 @@
         .stage-cover {
             width: 100%;
             height: 380px;
-            background: #000000 url('hero-bg.jpg') no-repeat center 20%;
+            background-color: #000000;
+            background-image: image-set(url('hero-bg.webp') type('image/webp'), url('hero-bg.jpg') type('image/jpeg'));
+            background-repeat: no-repeat;
+            background-position: center 20%;
             background-size: cover;
             position: relative;
         }
 
-        /* Инновационная бесшовная маска */
         .stage-cover::after {
             content: '';
             position: absolute;
@@ -84,11 +119,37 @@
                 linear-gradient(to right, rgba(15, 22, 15, 0.95) 0%, transparent 15%, transparent 85%, rgba(15, 22, 15, 0.95) 100%);
         }
 
+        /* 2. ВРАЩАЮЩИЙСЯ ЗОЛОТОЙ ОБОДОК ЛОГОТИПА */
         .avatar-wrapper {
             margin-top: -65px;
             position: relative;
             z-index: 2;
             margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .avatar-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -3px; left: -3px; right: -3px; bottom: -3px;
+            border-radius: 50%;
+            background: conic-gradient(from 0deg, #d4af37, transparent, #d4af37, transparent, #d4af37);
+            z-index: 0;
+            animation: rotateBorder 6s linear infinite;
+            opacity: 0.8;
+        }
+
+        .avatar-wrapper::after {
+            content: '';
+            position: absolute;
+            top: 3px; left: 3px; right: 3px; bottom: 3px;
+            border-radius: 50%;
+            background: #0f160f;
+            z-index: 1;
+        }
+
+        @keyframes rotateBorder {
+            to { transform: rotate(360deg); }
         }
 
         .logo {
@@ -96,14 +157,10 @@
             height: 130px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid #d4af37;
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
             background-color: #0f160f;
-            transition: box-shadow 0.4s ease;
-        }
-
-        .logo:hover {
-            box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
+            position: relative;
+            z-index: 2;
+            display: block;
         }
 
         /* Типографика заголовков */
@@ -134,7 +191,6 @@
             margin: 0 auto 35px auto;
         }
 
-        /* Заголовки секций */
         .section-title {
             font-family: 'Cormorant Garamond', serif;
             font-size: 24px;
@@ -158,15 +214,13 @@
             background-color: rgba(212, 175, 55, 0.3);
         }
 
-        /* Описание */
         .description {
             font-size: 15px;
             line-height: 1.8;
             font-weight: 300;
             color: #d1d6d1;
             margin-bottom: 35px;
-            text-align: justify;
-            text-align-last: center;
+            text-align: center;
             letter-spacing: 0.5px;
         }
 
@@ -217,6 +271,60 @@
             line-height: 1.6;
         }
 
+        /* Как мы работаем */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .process-step {
+            background: rgba(11, 18, 11, 0.6);
+            border: 1px solid rgba(26, 38, 26, 0.8);
+            border-radius: 14px;
+            padding: 24px 16px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.55);
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .process-step:hover {
+            transform: translateY(-4px);
+            border-color: rgba(212, 175, 55, 0.5);
+            box-shadow: 0 16px 30px rgba(0, 0, 0, 0.65), 0 0 15px rgba(212, 175, 55, 0.2);
+        }
+
+        .process-step-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            color: #d4af37;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+
+        .process-step h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 19px;
+            font-weight: 500;
+            color: #ffffff;
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+
+        .process-step p {
+            font-size: 12px;
+            color: #a9b3a9;
+            font-weight: 300;
+            line-height: 1.55;
+        }
+
         /* Блок Видео */
         .video-wrapper {
             display: grid;
@@ -236,6 +344,34 @@
             border: 1px solid #1a261a;
             transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
             background-color: #000000;
+        }
+
+        /* 5. ПУЛЬСИРУЮЩАЯ КНОПКА PLAY НА ВИДЕО */
+        .video-container::after {
+            content: '';
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70px; height: 70px;
+            background: rgba(212, 175, 55, 0.85);
+            border-radius: 50%;
+            z-index: 5;
+            box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4);
+            animation: pulse-play 2s infinite;
+            clip-path: polygon(35% 25%, 35% 75%, 80% 50%);
+            transition: opacity 0.3s ease;
+            pointer-events: none; /* Важно: чтобы не блокировать клики по видео */
+        }
+
+        .video-container:hover::after,
+        .video-container:active::after {
+            opacity: 0;
+        }
+
+        @keyframes pulse-play {
+            0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.5); }
+            70% { box-shadow: 0 0 0 20px rgba(212, 175, 55, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
         }
 
         .video-container iframe, 
@@ -268,6 +404,23 @@
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
             aspect-ratio: 1/1;
             transition: transform 0.3s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+            cursor: pointer;
+            padding: 0;
+            background: none;
+            font: inherit;
+            color: inherit;
+            width: 100%;
+        }
+
+        .gallery-item:focus-visible {
+            outline: 2px solid #d4af37;
+            outline-offset: 3px;
+        }
+
+        .gallery-item picture {
+            display: block;
+            width: 100%;
+            height: 100%;
         }
 
         .gallery-item img {
@@ -286,14 +439,143 @@
             transform: scale(1.08);
         }
 
-        /* Карточка клиентов */
+        /* Лайтбокс галереи */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 60px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .lightbox.is-open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .lightbox-backdrop {
+            position: absolute;
+            inset: 0;
+            background: rgba(4, 8, 4, 0.92);
+            backdrop-filter: blur(8px);
+        }
+
+        .lightbox-content {
+            position: relative;
+            z-index: 1;
+            max-width: min(960px, 100%);
+            max-height: 90vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: calc(90vh - 50px);
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            border-radius: 12px;
+            border: 1px solid rgba(212, 175, 55, 0.35);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(58, 11, 21, 0.5);
+        }
+
+        .lightbox-caption {
+            font-size: 13px;
+            font-weight: 300;
+            color: #c9d1c9;
+            text-align: center;
+            letter-spacing: 0.3px;
+            max-width: 600px;
+            line-height: 1.5;
+        }
+
+        .lightbox-counter {
+            position: absolute;
+            top: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            color: #d4af37;
+            text-transform: uppercase;
+        }
+
+        .lightbox-close,
+        .lightbox-prev,
+        .lightbox-next {
+            position: absolute;
+            z-index: 2;
+            border: 1px solid rgba(212, 175, 55, 0.35);
+            background: rgba(15, 22, 15, 0.85);
+            color: #d4af37;
+            cursor: pointer;
+            transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-close:hover,
+        .lightbox-prev:hover,
+        .lightbox-next:hover {
+            background: rgba(212, 175, 55, 0.15);
+            border-color: rgba(212, 175, 55, 0.6);
+            color: #ffffff;
+        }
+
+        .lightbox-close:focus-visible,
+        .lightbox-prev:focus-visible,
+        .lightbox-next:focus-visible {
+            outline: 2px solid #d4af37;
+            outline-offset: 2px;
+        }
+
+        .lightbox-close {
+            top: 20px;
+            right: 20px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            font-size: 28px;
+            line-height: 1;
+            padding: 0;
+        }
+
+        .lightbox-prev,
+        .lightbox-next {
+            top: 50%;
+            transform: translateY(-50%);
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            font-size: 32px;
+            line-height: 1;
+            padding: 0 0 4px 0;
+        }
+
+        .lightbox-prev { left: 16px; }
+        .lightbox-next { right: 16px; }
+
+        /* 4. БЕСКОНЕЧНАЯ ЛЕНТА КЛИЕНТОВ */
         .clients-card {
             background: rgba(11, 18, 11, 0.5);
             border-radius: 16px;
-            padding: 45px 30px;
+            padding: 45px 0;
             margin-bottom: 35px;
             border: 1px solid rgba(26, 38, 26, 0.7);
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.65);
+            overflow: hidden;
         }
 
         .clients-title {
@@ -307,39 +589,90 @@
             text-align: center;
         }
 
-        .clients-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-            width: fit-content;
-            margin: 0 auto;
-            text-align: left;
+        .marquee-wrapper {
+            overflow: hidden;
+            width: 100%;
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
         }
 
-        .clients-list li {
-            font-size: 14px;
-            font-weight: 300;
+        .marquee-track {
+            display: flex;
+            gap: 12px;
+            width: max-content;
+            animation: scroll-clients 35s linear infinite;
+        }
+
+        .marquee-track:hover {
+            animation-play-state: paused;
+        }
+
+        .client-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 72px;
+            min-width: 240px;
+            padding: 14px 16px;
+            background: rgba(4, 8, 4, 0.5);
+            border: 1px solid rgba(26, 38, 26, 0.9);
+            border-radius: 10px;
+            transition: border-color 0.3s ease, background 0.3s ease;
+        }
+
+        .client-item:hover {
+            border-color: rgba(212, 175, 55, 0.35);
+            background: rgba(212, 175, 55, 0.05);
+        }
+
+        .client-item img {
+            max-width: 100%;
+            max-height: 40px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            filter: grayscale(1) brightness(1.4);
+            opacity: 0.85;
+            transition: filter 0.3s ease, opacity 0.3s ease;
+        }
+
+        .client-item:hover img {
+            filter: grayscale(0) brightness(1);
+            opacity: 1;
+        }
+
+        .client-name {
+            font-size: 12px;
+            font-weight: 500;
             color: #c9d1c9;
-            display: flex;
-            align-items: flex-start;
-            line-height: 1.5;
-            letter-spacing: 0.3px;
+            letter-spacing: 0.4px;
+            line-height: 1.35;
+            text-align: center;
         }
 
-        .clients-list li::before {
-            content: "✧";
-            color: #d4af37;
-            margin-right: 14px;
-            font-size: 11px;
-            margin-top: 1px;
-            flex-shrink: 0;
+        @keyframes scroll-clients {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
 
-        /* Театральная цитата */
+        /* 3. ДЕКОРАТИВНЫЕ КАВЫЧКИ ДЛЯ ОТЗЫВА */
         .quote-text-wrapper {
             margin-top: 40px;
             padding: 0 30px;
+            position: relative;
+        }
+
+        .quote-text-wrapper::before {
+            content: '“';
+            position: absolute;
+            top: -30px;
+            left: 10px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 140px;
+            color: rgba(212, 175, 55, 0.1);
+            line-height: 1;
+            pointer-events: none;
+            z-index: 0;
         }
 
         .quote-author-wrapper {
@@ -348,6 +681,8 @@
         }
 
         .quote-text {
+            position: relative;
+            z-index: 1;
             font-family: 'Cormorant Garamond', serif;
             font-style: italic;
             font-size: 26px;
@@ -411,7 +746,6 @@
             fill: currentColor;
         }
 
-        /* Подвал */
         .footer {
             font-size: 11px;
             color: #445244;
@@ -419,9 +753,46 @@
             letter-spacing: 1px;
         }
 
+        .floating-cta {
+            display: none;
+            position: fixed;
+            bottom: 24px;
+            right: 20px;
+            z-index: 900;
+            padding: 14px 22px;
+            border-radius: 50px;
+            background: linear-gradient(135deg, #d4af37 0%, #a88b2a 100%);
+            color: #040804;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            box-shadow: 0 8px 30px rgba(212, 175, 55, 0.45), 0 4px 15px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(20px);
+        }
+
+        .floating-cta.is-visible {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+
+        .floating-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(212, 175, 55, 0.55), 0 6px 20px rgba(0, 0, 0, 0.55);
+        }
+
+        .floating-cta:focus-visible {
+            outline: 2px solid #ffffff;
+            outline-offset: 3px;
+        }
+
         /* Адаптивная верстка */
         @media (max-width: 768px) {
-            body { padding: 10px; }
+            body { padding: 10px; padding-bottom: 80px; }
             .container { border-radius: 16px; padding-bottom: 30px; }
             .content-padding { padding: 0 20px; }
             .stage-cover { height: 260px; }
@@ -430,12 +801,18 @@
             .section-title { font-size: 20px; letter-spacing: 3px; gap: 10px; }
             .section-title::before, .section-title::after { width: 30px; }
             .services-grid { grid-template-columns: 1fr; gap: 12px; }
+            .process-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
             .video-wrapper { grid-template-columns: 1fr; }
             .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
             .links-container { grid-template-columns: 1fr; gap: 12px; }
+            .floating-cta { display: block; }
+            .lightbox { padding: 60px 16px 20px; }
+            .lightbox-prev { left: 8px; }
+            .lightbox-next { right: 8px; }
+            .lightbox-prev, .lightbox-next { width: 40px; height: 40px; font-size: 26px; }
             .quote-text { font-size: 20px; }
-            .clients-card { padding: 30px 15px; }
-            .clients-list { width: 100%; }
+            .quote-text-wrapper::before { font-size: 100px; top: -20px; }
+            .client-item { min-width: 200px; }
         }
 
         /* Анимационные эффекты появления элементов */
@@ -449,6 +826,22 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* Отключение анимаций для пользователей с настройками accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            body::before { display: none; } /* Убираем прожектор */
+            .container { animation: none; }
+            .avatar-wrapper::before { animation: none; } /* Останавливаем ободок */
+            .video-container::after { animation: none; } /* Убираем пульсацию Play */
+            .marquee-track { animation-play-state: paused; } /* Останавливаем бегущую строку */
+            
+            .fade-in-up { opacity: 1; transform: none; transition: none; }
+            .service-card, .process-step, .video-container, .gallery-item, .gallery-item img, .btn, .logo, .floating-cta { transition: none; }
+            .service-card:hover, .process-step:hover, .video-container:hover, .gallery-item:hover, .gallery-item:hover img, .btn:hover, .floating-cta:hover { transform: none; }
+            .floating-cta.is-visible { transform: none; }
+            .lightbox { transition: none; }
+        }
     </style>
 </head>
 <body>
@@ -457,7 +850,10 @@
         <header>
             <div class="stage-cover"></div>
             <div class="avatar-wrapper">
-                <img src="logo.jpg" alt="Alex May" class="logo">
+                <picture>
+                    <source srcset="logo.webp" type="image/webp">
+                    <img src="logo.jpg" alt="Логотип Alex May Dance Company" class="logo" width="130" height="130" fetchpriority="high">
+                </picture>
             </div>
         </header>
 
@@ -473,58 +869,94 @@
             <h2 class="section-title">Форматы выступлений</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon">✦</div>
+                    <div class="service-icon" aria-hidden="true">✦</div>
                     <h4>Шоу-программы</h4>
                     <p>Масштабные концептуальные постановки для грандиозного открытия премий, фестивалей и статусных корпоративных мероприятий.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">✦</div>
+                    <div class="service-icon" aria-hidden="true">✦</div>
                     <h4>Камерные номера</h4>
                     <p>Изящные балетные перформансы на пуантах для закрытых приемов, частных торжеств, галерей и светских вечеров.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">✦</div>
+                    <div class="service-icon" aria-hidden="true">✦</div>
                     <h4>Интеграция бренда</h4>
                     <p>Создание эксклюзивной хореографии, отражающей философию, ценности и эстетику вашего бренда или продукта.</p>
+                </div>
+            </div>
+
+            <h2 class="section-title">Как мы работаем</h2>
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="process-step-num" aria-hidden="true">1</div>
+                    <h4>Бриф</h4>
+                    <p>Обсуждаем формат, площадку, аудиторию и задачи вашего мероприятия.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-step-num" aria-hidden="true">2</div>
+                    <h4>Концепция</h4>
+                    <p>Разрабатываем идею, музыку, костюмы и хореографию под ваш бренд или событие.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-step-num" aria-hidden="true">3</div>
+                    <h4>Репетиции</h4>
+                    <p>Отрабатываем номер с артистами, согласовываем детали и тайминг выступления.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-step-num" aria-hidden="true">4</div>
+                    <h4>Выступление</h4>
+                    <p>Приезжаем на площадку, проводим саундчек и создаём незабываемое шоу для гостей.</p>
                 </div>
             </div>
 
             <h2 class="section-title">Видеопрезентации</h2>
             <div class="video-wrapper">
                 <div class="video-container">
-                    <video src="Video1.mp4" controls playsinline preload="metadata"></video>
-                </div>
-                <div class="video-container">
-                    <video src="video2.mp4" controls playsinline preload="metadata"></video>
+                    <video src="video1.mp4" poster="preview.jpg" controls playsinline preload="metadata" title="Видеопрезентация Alex May Dance Company"></video>
                 </div>
             </div>
 
             <h2 class="section-title">Галерея</h2>
             <div class="gallery-grid">
-                <div class="gallery-item"><img src="photo1.jpg" alt="Балет на пуантах"></div>
-                <div class="gallery-item"><img src="photo2.jpg" alt="Балет на пуантах"></div>
-                <div class="gallery-item"><img src="photo3.jpg" alt="Балет на пуантах"></div>
-                <div class="gallery-item"><img src="photo4.jpg" alt="Балет на пуантах"></div>
-                <div class="gallery-item"><img src="photo5.jpg" alt="Балет на пуантах"></div>
-                <div class="gallery-item"><img src="photo6.jpg" alt="Балет на пуантах"></div>
+                <button type="button" class="gallery-item" aria-label="Открыть фото: шоу-программа на сцене"><picture><source srcset="photo1.webp" type="image/webp"><img src="photo1.jpg" alt="Шоу-программа Alex May Dance Company на сцене" loading="lazy" decoding="async" width="300" height="300"></picture></button>
+                <button type="button" class="gallery-item" aria-label="Открыть фото: камерный балетный номер"><picture><source srcset="photo2.webp" type="image/webp"><img src="photo2.jpg" alt="Камерный балетный номер на пуантах" loading="lazy" decoding="async" width="300" height="300"></picture></button>
+                <button type="button" class="gallery-item" aria-label="Открыть фото: корпоративное мероприятие"><picture><source srcset="photo3.webp" type="image/webp"><img src="photo3.jpg" alt="Выступление на корпоративном мероприятии" loading="lazy" decoding="async" width="300" height="300"></picture></button>
+                <button type="button" class="gallery-item" aria-label="Открыть фото: артисты в постановке"><picture><source srcset="photo4.webp" type="image/webp"><img src="photo4.jpg" alt="Артисты Alex May Dance Company в постановке" loading="lazy" decoding="async" width="300" height="300"></picture></button>
+                <button type="button" class="gallery-item" aria-label="Открыть фото: интеграция бренда"><picture><source srcset="photo5.webp" type="image/webp"><img src="photo5.jpg" alt="Балетная интеграция бренда на мероприятии" loading="lazy" decoding="async" width="300" height="300"></picture></button>
+                <button type="button" class="gallery-item" aria-label="Открыть фото: заключительный номер"><picture><source srcset="photo6.webp" type="image/webp"><img src="photo6.jpg" alt="Заключительный номер шоу-программы на пуантах" loading="lazy" decoding="async" width="300" height="300"></picture></button>
             </div>
 
             <h2 class="section-title">Наши клиенты</h2>
             <div class="clients-card">
                 <h3 class="clients-title">Нам доверяют</h3>
-                <ul class="clients-list">
-                    <li>Федеральный телеканал 78</li>
-                    <li>Emirates Airlines</li>
-                    <li>Генеральное консульство Китая в России</li>
-                    <li>Аэропорт Пулково</li>
-                    <li>Русский Государственный музей</li>
-                    <li>Особняк А.П. Брюллова</li>
-                    <li>Елисейский дворец</li>
-                    <li>Артисты шоу-бизнеса</li>
-                    <li>Театры, музеи и культурные центры</li>
-                    <li>Частные мероприятия и корпоративы</li>
-                    <li>Федеральные СМИ и официальное телевидение</li>
-                </ul>
+                <div class="marquee-wrapper">
+                    <div class="marquee-track">
+                        <!-- Первый блок для плавного старта -->
+                        <div class="client-item"><span class="client-name">Телеканал 78</span></div>
+                        <div class="client-item"><span class="client-name">Emirates Airlines</span></div>
+                        <div class="client-item"><span class="client-name">Генконсульство Китая в России</span></div>
+                        <div class="client-item"><span class="client-name">Аэропорт Пулково</span></div>
+                        <div class="client-item"><span class="client-name">Русский Государственный музей</span></div>
+                        <div class="client-item"><span class="client-name">Особняк А.П. Брюллова</span></div>
+                        <div class="client-item"><span class="client-name">Елисейский дворец</span></div>
+                        <div class="client-item"><span class="client-name">Артисты шоу-бизнеса</span></div>
+                        <div class="client-item"><span class="client-name">Театры и культурные центры</span></div>
+                        <div class="client-item"><span class="client-name">Частные мероприятия</span></div>
+                        <div class="client-item"><span class="client-name">Федеральные СМИ</span></div>
+                        <!-- Дублируем блок для бесшовной петли -->
+                        <div class="client-item"><span class="client-name">Телеканал 78</span></div>
+                        <div class="client-item"><span class="client-name">Emirates Airlines</span></div>
+                        <div class="client-item"><span class="client-name">Генконсульство Китая в России</span></div>
+                        <div class="client-item"><span class="client-name">Аэропорт Пулково</span></div>
+                        <div class="client-item"><span class="client-name">Русский Государственный музей</span></div>
+                        <div class="client-item"><span class="client-name">Особняк А.П. Брюллова</span></div>
+                        <div class="client-item"><span class="client-name">Елисейский дворец</span></div>
+                        <div class="client-item"><span class="client-name">Артисты шоу-бизнеса</span></div>
+                        <div class="client-item"><span class="client-name">Театры и культурные центры</span></div>
+                        <div class="client-item"><span class="client-name">Частные мероприятия</span></div>
+                        <div class="client-item"><span class="client-name">Федеральные СМИ</span></div>
+                    </div>
+                </div>
             </div>
 
             <div class="quote-text-wrapper">
@@ -534,38 +966,200 @@
                 <p class="quote-author">— Из отзывов официальных СМИ</p>
             </div>
 
-            <h2 class="section-title">Обсудить проект</h2>
+            <h2 class="section-title" id="contact">Обсудить проект</h2>
             <div class="links-container">
-                <a href="https://t.me/Alex_May_company" class="btn btn-tg" target="_blank" rel="noopener noreferrer">
-                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-1-.65-.35-1 .22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.66-.52.36-1 .53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.35-.49.97-.74 3.79-1.65 6.32-2.74 7.57-3.27 3.61-1.53 4.36-1.8 4.85-1.8.11 0 .35.03.5.16.13.12.17.29.18.41-.01.07-.01.14-.02.21z"/></svg>
+                <a href="https://t.me/yosoymashaa" class="btn btn-tg" target="_blank" rel="noopener noreferrer" aria-label="Написать в Telegram">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-1-.65-.35-1 .22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.66-.52.36-1 .53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.35-.49.97-.74 3.79-1.65 6.32-2.74 7.57-3.27 3.61-1.53 4.36-1.8 4.85-1.8.11 0 .35.03.5.16.13.12.17.29.18.41-.01.07-.01.14-.02.21z"/></svg>
                     Написать в Telegram
                 </a>
-                <a href="https://vk.com/id165158888" class="btn btn-vk" target="_blank" rel="noopener noreferrer">
-                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.87 11.52c.42.41.87.79 1.25 1.23.4.45.77.93 1.07 1.46.22.38.1.79-.27.81h-2.22c-.6 0-1.11-.19-1.54-.62-.35-.35-.68-.72-1.01-1.09-.22-.24-.43-.47-.7-.62-.33-.18-.62-.1-.82.22-.21.32-.26.68-.29 1.05-.04.43-.24.61-.66.62-1.12.02-2.19-.21-3.17-.82A6.5 6.5 0 0 1 6.3 11.4c-.16-.36-.31-.73-.44-1.11-.14-.42.02-.63.45-.64h2.24c.29 0 .5.14.6.41.37.95.86 1.82 1.54 2.57.19.21.39.4.67.43.27.03.46-.08.54-.37.13-.5.17-1 .15-1.51-.02-.62-.18-.95-.66-1.04-.22-.04-.19-.13-.08-.2.34-.21.75-.24 1.15-.24h1.53c.43.04.54.24.57.68.04.62.02 1.24.01 1.86 0 .23.08.51.34.58.23.06.41-.1.55-.26.63-.73 1.11-1.55 1.49-2.43.12-.29.3-.44.62-.44h2.27c.52 0 .69.23.53.72-.25.75-.66 1.43-1.14 2.06-.34.45-.72.87-1.1 1.29-.16.15-.17.27-.02.44z"/></svg>
+                <a href="https://vk.ru/alexmay.show" class="btn btn-vk" target="_blank" rel="noopener noreferrer" aria-label="Написать в VK">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.87 11.52c.42.41.87.79 1.25 1.23.4.45.77.93 1.07 1.46.22.38.1.79-.27.81h-2.22c-.6 0-1.11-.19-1.54-.62-.35-.35-.68-.72-1.01-1.09-.22-.24-.43-.47-.7-.62-.33-.18-.62-.1-.82.22-.21.32-.26.68-.29 1.05-.04.43-.24.61-.66.62-1.12.02-2.19-.21-3.17-.82A6.5 6.5 0 0 1 6.3 11.4c-.16-.36-.31-.73-.44-1.11-.14-.42.02-.63.45-.64h2.24c.29 0 .5.14.6.41.37.95.86 1.82 1.54 2.57.19.21.39.4.67.43.27.03.46-.08.54-.37.13-.5.17-1 .15-1.51-.02-.62-.18-.95-.66-1.04-.22-.04-.19-.13-.08-.2.34-.21.75-.24 1.15-.24h1.53c.43.04.54.24.57.68.04.62.02 1.24.01 1.86 0 .23.08.51.34.58.23.06.41-.1.55-.26.63-.73 1.11-1.55 1.49-2.43.12-.29.3-.44.62-.44h2.27c.52 0 .69.23.53.72-.25.75-.66 1.43-1.14 2.06-.34.45-.72.87-1.1 1.29-.16.15-.17.27-.02.44z"/></svg>
                     Написать в VK
                 </a>
-                <a href="https://api.whatsapp.com/send?phone=79119101521" class="btn btn-wa" target="_blank" rel="noopener noreferrer">
-                    <svg viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.82 13.08c-.24.68-1.19 1.24-1.64 1.29-.45.05-.89.24-2.91-.56-2.42-.96-3.95-3.41-4.07-3.57-.12-.16-.99-1.32-.99-2.51 0-1.2.62-1.79.84-2.03.22-.24.48-.3.64-.3.16 0 .32.01.46.01.15 0 .35-.06.54.4.2.49.68 1.66.74 1.78.06.12.1.26.02.42-.08.16-.12.26-.24.4-.12.14-.26.31-.37.42-.12.12-.25.25-.11.49.14.24.63 1.04 1.35 1.68.93.83 1.71 1.09 1.95 1.21.24.12.38.1.52-.06.14-.16.6-1.11.76-1.31.16-.2.32-.16.54-.08.22.08 1.41.66 1.65.78.24.12.4.18.46.28.06.1.06.58-.18 1.26z"/></svg>
+                <a href="https://api.whatsapp.com/send?phone=79997215537&amp;text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%20%D0%B2%D1%8B%D1%81%D1%82%D1%83%D0%BF%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20Alex%20May%20Dance%20Company." class="btn btn-wa" target="_blank" rel="noopener noreferrer" aria-label="Написать в WhatsApp">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.82 13.08c-.24.68-1.19 1.24-1.64 1.29-.45.05-.89.24-2.91-.56-2.42-.96-3.95-3.41-4.07-3.57-.12-.16-.99-1.32-.99-2.51 0-1.2.62-1.79.84-2.03.22-.24.48-.3.64-.3.16 0 .32.01.46.01.15 0 .35-.06.54.4.2.49.68 1.66.74 1.78.06.12.1.26.02.42-.08.16-.12.26-.24.4-.12.14-.26.31-.37.42-.12.12-.25.25-.11.49.14.24.63 1.04 1.35 1.68.93.83 1.71 1.09 1.95 1.21.24.12.38.1.52-.06.14-.16.6-1.11.76-1.31.16-.2.32-.16.54-.08.22.08 1.41.66 1.65.78.24.12.4.18.46.28.06.1.06.58-.18 1.26z"/></svg>
                     Написать в WhatsApp
                 </a>
             </div>
 
             <footer class="footer">
-                &copy; 2026 Alex May Dance Company. All rights reserved.
+                &copy; <span id="current-year"></span> Alex May Dance Company. All rights reserved.
             </footer>
         </div>
     </div>
 
+    <a href="#contact" class="floating-cta" id="floating-cta" aria-label="Обсудить проект">Обсудить проект</a>
+
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Просмотр фото галереи" hidden>
+        <div class="lightbox-backdrop"></div>
+        <div class="lightbox-counter" aria-live="polite"></div>
+        <button type="button" class="lightbox-close" aria-label="Закрыть">&times;</button>
+        <button type="button" class="lightbox-prev" aria-label="Предыдущее фото">&#8249;</button>
+        <button type="button" class="lightbox-next" aria-label="Следующее фото">&#8250;</button>
+        <figure class="lightbox-content">
+            <img src="" alt="">
+            <figcaption class="lightbox-caption"></figcaption>
+        </figure>
+    </div>
+
     <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('visible');
+        // Динамический год
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // 1. Скрипт для прожектора
+        document.addEventListener('mousemove', (e) => {
+            document.body.style.setProperty('--mouse-x', e.clientX + 'px');
+            document.body.style.setProperty('--mouse-y', e.clientY + 'px');
+        });
+
+        const animatedSections = document.querySelectorAll(
+            '.services-grid, .process-grid, .video-wrapper, .gallery-grid, .clients-card, .quote-text-wrapper, .quote-author-wrapper, .links-container'
+        );
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        if (prefersReducedMotion) {
+            animatedSections.forEach(el => el.classList.add('visible'));
+        } else {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            animatedSections.forEach(el => {
+                el.classList.add('fade-in-up');
+                observer.observe(el);
             });
+        }
+
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = lightbox.querySelector('.lightbox-content img');
+        const lightboxCaption = lightbox.querySelector('.lightbox-caption');
+        const lightboxCounter = lightbox.querySelector('.lightbox-counter');
+        const galleryItems = [...document.querySelectorAll('.gallery-item')];
+        let currentIndex = 0;
+        let lastFocusedElement = null;
+
+        function showSlide(index) {
+            const item = galleryItems[index];
+            const img = item.querySelector('img');
+            currentIndex = index;
+            lightboxImg.src = img.currentSrc || img.src;
+            lightboxImg.alt = img.alt;
+            lightboxCaption.textContent = img.alt;
+            lightboxCounter.textContent = `${index + 1} / ${galleryItems.length}`;
+        }
+
+        function openLightbox(index) {
+            lastFocusedElement = document.activeElement;
+            showSlide(index);
+            lightbox.hidden = false;
+            requestAnimationFrame(() => lightbox.classList.add('is-open'));
+            document.body.style.overflow = 'hidden';
+            lightbox.querySelector('.lightbox-close').focus();
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('is-open');
+            document.body.style.overflow = '';
+            
+            const hideLightbox = () => {
+                lightbox.hidden = true;
+                lightboxImg.src = '';
+            };
+            
+            if (prefersReducedMotion) {
+                hideLightbox();
+            } else {
+                let isHidden = false;
+                const timeoutId = setTimeout(() => {
+                    if (!isHidden) hideLightbox();
+                }, 350);
+
+                const handler = () => {
+                    clearTimeout(timeoutId);
+                    if (!isHidden) {
+                        isHidden = true;
+                        hideLightbox();
+                    }
+                };
+                
+                lightbox.addEventListener('transitionend', handler, { once: true });
+            }
+            
+            if (lastFocusedElement) lastFocusedElement.focus();
+        }
+
+        function showPrev() {
+            showSlide((currentIndex - 1 + galleryItems.length) % galleryItems.length);
+        }
+
+        function showNext() {
+            showSlide((currentIndex + 1) % galleryItems.length);
+        }
+
+        galleryItems.forEach((item, index) => {
+            item.addEventListener('click', () => openLightbox(index));
         });
-        document.querySelectorAll('.services-grid, .video-wrapper, .gallery-grid, .clients-card, .quote-text-wrapper').forEach(el => {
-            el.classList.add('fade-in-up');
-            observer.observe(el);
+
+        lightbox.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+        lightbox.querySelector('.lightbox-backdrop').addEventListener('click', closeLightbox);
+        lightbox.querySelector('.lightbox-prev').addEventListener('click', showPrev);
+        lightbox.querySelector('.lightbox-next').addEventListener('click', showNext);
+
+        document.addEventListener('keydown', (e) => {
+            if (lightbox.hidden) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') showPrev();
+            if (e.key === 'ArrowRight') showNext();
+            
+            if (e.key === 'Tab') {
+                const focusableElements = lightbox.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+                const firstEl = focusableElements[0];
+                const lastEl = focusableElements[focusableElements.length - 1];
+
+                if (e.shiftKey) {
+                    if (document.activeElement === firstEl) {
+                        e.preventDefault();
+                        lastEl.focus();
+                    }
+                } else {
+                    if (document.activeElement === lastEl) {
+                        e.preventDefault();
+                        firstEl.focus();
+                    }
+                }
+            }
         });
+
+        let touchStartX = 0;
+        let touchStartY = 0;
+
+        lightbox.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+            touchStartY = e.changedTouches[0].screenY;
+        }, { passive: true });
+
+        lightbox.addEventListener('touchend', (e) => {
+            const dx = e.changedTouches[0].screenX - touchStartX;
+            const dy = e.changedTouches[0].screenY - touchStartY;
+            if (Math.abs(dx) < 50 || Math.abs(dx) < Math.abs(dy)) return;
+            if (dx < 0) showNext();
+            else showPrev();
+        }, { passive: true });
+
+        const floatingCta = document.getElementById('floating-cta');
+        const contactSection = document.getElementById('contact');
+
+        if (floatingCta && contactSection) {
+            const ctaObserver = new IntersectionObserver(([entry]) => {
+                floatingCta.classList.toggle('is-visible', !entry.isIntersecting);
+            }, { threshold: 0.1 });
+            ctaObserver.observe(contactSection);
+        }
     </script>
 </body>
 </html>
